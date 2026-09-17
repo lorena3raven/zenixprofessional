@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zenix-cream: #faf6f4;
+  --color-zenix-blush: #f5e6ea;
+  --color-zenix-rose: #d98a9e;
+  --color-zenix-rose-dark: #b76e82;
+  --color-zenix-mauve: #c97a8e;
+  --color-zenix-ink: #3a2f35;
+  --color-zenix-warm-gray: #7a6e72;
+  --color-zenix-gold: #c9a876;
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Poppins", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  margin: 0;
+  background-color: var(--color-zenix-cream);
+  color: var(--color-zenix-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Animações de corações flutuando */
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(360deg) scale(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-float-up {
+  animation: float-up linear infinite;
+}
+
+.animate-gentle-pulse {
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
