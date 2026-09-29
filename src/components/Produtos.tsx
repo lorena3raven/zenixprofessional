@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { produtos, type Produto } from '../data/produtos';
 import { categorias } from '../data/categorias';
-import { links } from '../utils/whatsapp';
 
 import {
   ArrowRightIcon,
@@ -46,7 +45,6 @@ export function Produtos() {
             "
           >
             {/* Tag */}
-
             <span
               className="
                 text-zenix-rose-dark
@@ -62,7 +60,6 @@ export function Produtos() {
             </span>
 
             {/* Título */}
-
             <h2
               className="
                 text-[30px]
@@ -80,7 +77,6 @@ export function Produtos() {
             </h2>
 
             {/* Descrição */}
-
             <p
               className="
                 text-zenix-warm-gray
@@ -117,20 +113,15 @@ export function Produtos() {
                   bg-white
                   border
                   border-zenix-rose/15
-
                   rounded-[20px]
                   sm:rounded-[24px]
                   md:rounded-3xl
-
                   overflow-hidden
-
                   hover:border-zenix-rose/40
                   hover:shadow-xl
                   hover:-translate-y-1
-
                   transition-all
                   duration-300
-
                   flex
                   flex-col
                 "
@@ -148,7 +139,6 @@ export function Produtos() {
                   "
                 >
                   {/* Destaque */}
-
                   {prod.destaque && (
                     <div
                       className="
@@ -159,37 +149,26 @@ export function Produtos() {
                         sm:left-3
                         md:top-4
                         md:left-4
-
                         z-10
-
                         bg-zenix-rose
                         text-white
-
                         text-[7px]
                         sm:text-[8px]
                         md:text-[9px]
-
                         font-semibold
-
                         tracking-[0.12em]
                         sm:tracking-[0.15em]
                         md:tracking-[0.18em]
-
                         uppercase
-
                         px-2
                         sm:px-2.5
                         md:px-3
-
                         py-1
                         sm:py-1.5
-
                         rounded-full
-
                         flex
                         items-center
                         gap-1
-
                         shadow-md
                       "
                     >
@@ -202,7 +181,6 @@ export function Produtos() {
                           stroke-[1.5]
                         "
                       />
-
                       Destaque
                     </div>
                   )}
@@ -230,30 +208,23 @@ export function Produtos() {
                     p-3.5
                     sm:p-5
                     md:p-6
-
                     flex
                     flex-col
                     flex-1
                   "
                 >
                   {/* Categoria */}
-
                   <span
                     className="
                       text-[7px]
                       sm:text-[8px]
                       md:text-[10px]
-
                       text-zenix-rose-dark
-
                       font-semibold
-
                       tracking-[0.13em]
                       sm:tracking-[0.16em]
                       md:tracking-[0.20em]
-
                       uppercase
-
                       mb-1.5
                       sm:mb-2
                     "
@@ -262,21 +233,15 @@ export function Produtos() {
                   </span>
 
                   {/* Nome */}
-
                   <h3
                     className="
                       text-[14px]
                       sm:text-[17px]
                       md:text-[20px]
-
                       text-zenix-ink
-
                       font-light
-
                       tracking-[-0.025em]
-
                       leading-[1.15]
-
                       mb-2
                       sm:mb-3
                     "
@@ -285,24 +250,18 @@ export function Produtos() {
                   </h3>
 
                   {/* Descrição */}
-
                   <p
                     className="
                       text-[10px]
                       sm:text-[12px]
                       md:text-[14px]
-
                       text-zenix-warm-gray
-
                       font-light
-
                       leading-[1.5]
                       sm:leading-[1.6]
-
                       mb-4
                       sm:mb-5
                       md:mb-6
-
                       flex-1
                     "
                   >
@@ -322,78 +281,56 @@ export function Produtos() {
                     "
                   >
                     {/* Ver detalhes */}
-
                     <button
                       onClick={() => setProdutoAberto(prod)}
                       className="
                         flex-1
-
                         inline-flex
                         items-center
                         justify-center
-
                         border
                         border-zenix-ink/15
-
                         hover:border-zenix-rose
-
                         text-zenix-ink
                         hover:text-zenix-rose-dark
-
                         font-semibold
-
                         tracking-[0.08em]
                         sm:tracking-[0.12em]
                         md:tracking-[0.16em]
-
                         uppercase
-
                         text-[7px]
                         sm:text-[8px]
                         md:text-[10px]
-
                         px-2
                         sm:px-3
                         md:px-4
-
                         py-2.5
                         sm:py-3
-
                         rounded-full
-
                         transition
                       "
                     >
                       Ver detalhes
                     </button>
 
-                    {/* WhatsApp */}
-
+                    {/* Ir para formulário */}
                     <a
-                      href={links.produto(prod.nome)}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      href="#cadastro"
                       className="
                         shrink-0
-
                         inline-flex
                         items-center
                         justify-center
-
                         bg-zenix-rose
                         hover:bg-zenix-rose-dark
-
                         text-white
-
                         w-9
                         sm:w-10
                         md:w-11
-
                         rounded-full
-
                         transition
                       "
-                      aria-label="Falar no WhatsApp"
+                      aria-label="Ir para o formulário"
                     >
                       <ArrowRightIcon
                         className="
@@ -423,15 +360,11 @@ export function Produtos() {
             fixed
             inset-0
             z-100
-
             flex
             items-center
             justify-center
-
             p-4
-
             bg-zenix-ink/60
-
             backdrop-blur-sm
           "
           onClick={() => setProdutoAberto(null)}
@@ -439,18 +372,12 @@ export function Produtos() {
           <div
             className="
               relative
-
               bg-zenix-cream
-
               rounded-3xl
-
               max-w-4xl
               w-full
-
               max-h-[90vh]
-
               overflow-y-auto
-
               shadow-2xl
             "
             onClick={(e) => e.stopPropagation()}
@@ -466,24 +393,17 @@ export function Produtos() {
                 top-4
                 right-4
                 z-10
-
                 w-10
                 h-10
-
                 rounded-full
-
                 bg-white
                 hover:bg-zenix-blush
-
                 border
                 border-zenix-rose/20
-
                 flex
                 items-center
                 justify-center
-
                 text-zenix-ink
-
                 transition
               "
               aria-label="Fechar"
@@ -528,26 +448,19 @@ export function Produtos() {
                 className="
                   p-7
                   md:p-10
-
                   flex
                   flex-col
                 "
               >
                 {/* Categoria */}
-
                 <span
                   className="
                     text-[9px]
                     md:text-[10px]
-
                     text-zenix-rose-dark
-
                     font-semibold
-
                     tracking-[0.20em]
-
                     uppercase
-
                     mb-3
                   "
                 >
@@ -555,20 +468,14 @@ export function Produtos() {
                 </span>
 
                 {/* Nome */}
-
                 <h3
                   className="
                     text-[25px]
                     md:text-[32px]
-
                     text-zenix-ink
-
                     font-light
-
                     tracking-[-0.035em]
-
                     leading-[1.08]
-
                     mb-4
                   "
                 >
@@ -576,20 +483,14 @@ export function Produtos() {
                 </h3>
 
                 {/* Descrição */}
-
                 <p
                   className="
                     text-[13px]
                     md:text-[15px]
-
                     text-zenix-warm-gray
-
                     font-light
-
                     leading-[1.7]
-
                     mb-8
-
                     flex-1
                   "
                 >
@@ -597,37 +498,25 @@ export function Produtos() {
                 </p>
 
                 {/* CTA */}
-
                 <a
-                  href={links.produto(produtoAberto.nome)}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#cadastro"
+                  onClick={() => setProdutoAberto(null)}
                   className="
                     inline-flex
                     items-center
                     justify-center
-
                     gap-3
-
                     bg-zenix-rose
                     hover:bg-zenix-rose-dark
-
                     text-white
-
                     font-semibold
-
                     tracking-[0.16em]
-
                     uppercase
-
                     text-[10px]
                     md:text-[11px]
-
                     px-6
                     py-3.5
-
                     rounded-full
-
                     transition
                   "
                 >

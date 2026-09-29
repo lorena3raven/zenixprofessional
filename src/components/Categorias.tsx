@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+
 import {
   SparklesIcon,
   HomeIcon,
@@ -8,7 +9,6 @@ import {
 } from '@heroicons/react/24/outline';
 
 import { categorias } from '../data/categorias';
-import { links } from '../utils/whatsapp';
 
 const iconesPorCategoria: Record<
   string,
@@ -44,7 +44,7 @@ export function Categorias() {
         relative
         py-16
         sm:py-20
-        md:py-28
+        md:py-24
         px-5
         sm:px-6
         border-y
@@ -66,14 +66,11 @@ export function Categorias() {
         "
       />
 
-      {/* SPOTLIGHT */}
+      {/* SPOTLIGHT QUE SEGUE O MOUSE */}
       <div
         className="
           absolute
           inset-0
-          transition-[background]
-          duration-300
-          ease-out
           pointer-events-none
           opacity-50
         "
@@ -88,9 +85,7 @@ export function Categorias() {
 
       <div className="relative z-10 max-w-7xl mx-auto">
 
-        {/* =========================================
-            CABEÇALHO
-        ========================================== */}
+        {/* CABEÇALHO */}
         <div
           className="
             max-w-3xl
@@ -98,32 +93,24 @@ export function Categorias() {
             text-center
             mb-10
             sm:mb-12
-            md:mb-14
+            md:mb-12
           "
         >
           <span
             className="
               inline-block
               text-white
-
               text-[9px]
               sm:text-[10px]
               md:text-[11px]
-
               font-semibold
               tracking-[0.30em]
               uppercase
-
               mb-4
-
               px-4
               py-1.5
-
               bg-white/15
-              backdrop-blur-sm
-
               rounded-full
-
               border
               border-white/30
             "
@@ -136,17 +123,13 @@ export function Categorias() {
               text-[29px]
               sm:text-[38px]
               md:text-[48px]
-
               text-white
               font-light
-
               tracking-[-0.04em]
               leading-[1.08]
-
               mt-1
               mb-4
               md:mb-5
-
               drop-shadow-lg
             "
           >
@@ -158,18 +141,13 @@ export function Categorias() {
           <p
             className="
               text-white/90
-
               text-[12px]
               sm:text-[14px]
               md:text-[16px]
-
               font-light
-
               max-w-2xl
               mx-auto
-
               leading-[1.65]
-
               drop-shadow-md
             "
           >
@@ -178,18 +156,17 @@ export function Categorias() {
           </p>
         </div>
 
-        {/* =========================================
-            GRID
-        ========================================== */}
+        {/* GRID */}
         <div
           className="
             grid
+            grid-cols-1
             sm:grid-cols-2
             lg:grid-cols-4
-
             gap-4
             sm:gap-5
             lg:gap-6
+            items-stretch
           "
         >
           {categorias.map((cat, index) => {
@@ -199,144 +176,110 @@ export function Categorias() {
             return (
               <a
                 key={cat.id}
-                href={links.produto(cat.nome)}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#cadastro"
                 className="
                   group
                   relative
-
+                  isolate
+                  w-full
+                  min-w-0
+                  h-full
                   flex
                   flex-col
-
-                  bg-[#F8F4F2]/95
-                  backdrop-blur-xl
-
+                  bg-[#F8F4F2]
                   border
                   border-white/50
-
                   rounded-[24px]
                   sm:rounded-3xl
-
                   p-5
                   sm:p-6
-                  lg:p-7
-
+                  lg:p-6
                   shadow-[0_14px_35px_rgba(90,50,60,0.11)]
-
-                  hover:bg-white
                   hover:border-zenix-rose/40
                   hover:-translate-y-1
-
                   hover:shadow-[0_20px_45px_rgba(90,50,60,0.16)]
-
-                  transition-all
+                  transition-[transform,box-shadow,border-color]
                   duration-300
-
                   overflow-hidden
                 "
               >
-                {/* GLOW */}
+                {/* GLOW INTERNO */}
                 <div
                   className="
                     absolute
-                    -top-10
-                    -left-10
-
-                    w-44
-                    h-44
-
+                    -z-0
+                    -top-12
+                    -left-12
+                    w-40
+                    h-40
                     rounded-full
-
                     bg-zenix-rose/0
                     group-hover:bg-zenix-rose/10
-
-                    blur-3xl
-
-                    transition-all
+                    blur-2xl
+                    transition-colors
                     duration-500
-
                     pointer-events-none
                   "
                 />
 
-                {/* =========================================
-                    TOPO
-                ========================================== */}
+                {/* TOPO */}
                 <div
                   className="
                     relative
+                    z-10
                     flex
                     items-center
                     justify-between
-
                     mb-4
-                    sm:mb-5
                   "
                 >
-                  {/* Ícone */}
+                  {/* ÍCONE */}
                   <div
                     className="
                       w-10
                       h-10
-
                       sm:w-11
                       sm:h-11
-
+                      shrink-0
                       rounded-xl
                       sm:rounded-2xl
-
                       bg-zenix-rose/10
-
                       border
                       border-zenix-rose/25
-
                       flex
                       items-center
                       justify-center
-
                       text-zenix-rose-dark
-
-                      transition-all
+                      transition-colors
                       duration-300
-
                       group-hover:bg-zenix-rose
                       group-hover:text-white
                       group-hover:border-zenix-rose
-                      group-hover:scale-105
                     "
                   >
                     <Icone
                       className="
                         w-[18px]
                         h-[18px]
-
                         sm:w-5
                         sm:h-5
-
                         stroke-[1.4]
                       "
                     />
                   </div>
 
-                  {/* Número */}
+                  {/* NÚMERO */}
                   <span
                     className="
                       text-[26px]
                       sm:text-[29px]
-                      md:text-[32px]
-
+                      md:text-[30px]
                       font-light
-
                       tracking-[-0.04em]
-
                       text-zenix-rose/25
-
                       group-hover:text-zenix-rose/55
-
                       transition-colors
                       duration-300
-
                       select-none
                     "
                   >
@@ -344,24 +287,17 @@ export function Categorias() {
                   </span>
                 </div>
 
-                {/* =========================================
-                    TEXTO
-                ========================================== */}
-                <div className="relative">
+                {/* TEXTO */}
+                <div className="relative z-10">
                   <h3
                     className="
                       text-[17px]
                       sm:text-[18px]
                       md:text-[19px]
-
                       text-zenix-ink
-
                       font-light
-
                       tracking-[-0.025em]
-
                       leading-tight
-
                       mb-2
                     "
                   >
@@ -372,73 +308,59 @@ export function Categorias() {
                     className="
                       text-[12px]
                       sm:text-[13px]
-                      md:text-[14px]
-
+                      md:text-[13px]
                       font-light
-
                       text-zenix-warm-gray
-
-                      leading-[1.55]
+                      leading-[1.5]
                     "
                   >
                     {cat.descricao}
                   </p>
                 </div>
 
-                {/* =========================================
-                    SABER MAIS
-                ========================================== */}
+                {/* CTA */}
                 <div
                   className="
                     relative
-
-                    mt-5
-                    sm:mt-6
-
-                    pt-3
-
-                    border-t
-                    border-zenix-rose/15
-
-                    group-hover:border-zenix-rose/30
-
-                    flex
-                    items-center
-                    justify-between
-
-                    text-[9px]
-                    sm:text-[10px]
-                    md:text-[11px]
-
-                    font-semibold
-
-                    tracking-[0.18em]
-
-                    uppercase
-
-                    text-zenix-warm-gray
-
-                    group-hover:text-zenix-rose-dark
-
-                    transition-colors
-                    duration-300
+                    z-10
+                    mt-auto
+                    pt-5
                   "
                 >
-                  <span>Saber mais</span>
-
-                  <ArrowRightIcon
+                  <div
                     className="
-                      w-4
-                      h-4
-
-                      stroke-[1.5]
-
-                      transition-transform
+                      pt-3
+                      border-t
+                      border-zenix-rose/15
+                      group-hover:border-zenix-rose/30
+                      flex
+                      items-center
+                      justify-between
+                      text-[9px]
+                      sm:text-[10px]
+                      font-semibold
+                      tracking-[0.18em]
+                      uppercase
+                      text-zenix-warm-gray
+                      group-hover:text-zenix-rose-dark
+                      transition-colors
                       duration-300
-
-                      group-hover:translate-x-1.5
                     "
-                  />
+                  >
+                    <span>Tenho interesse</span>
+
+                    <ArrowRightIcon
+                      className="
+                        w-4
+                        h-4
+                        shrink-0
+                        stroke-[1.5]
+                        transition-transform
+                        duration-300
+                        group-hover:translate-x-1
+                      "
+                    />
+                  </div>
                 </div>
               </a>
             );
